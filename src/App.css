@@ -1,3 +1,5 @@
+
+
 .App {
   text-align: center;
 }
@@ -36,3 +38,10 @@
     transform: rotate(360deg);
   }
 }
+
+.photo {
+  width: '23px';
+  height: '23px';
+}
+
+body {background-color: white;}
