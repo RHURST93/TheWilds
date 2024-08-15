@@ -34,7 +34,7 @@ const SmoothScrollHero = () => {
   }, []);
 
   return (
-    <div className="bg-zinc-950">
+    <div className= "bg-lime-950">
         
       <Hero />
       <ParallaxImages />
@@ -44,20 +44,20 @@ const SmoothScrollHero = () => {
 
 
 
-const SECTION_HEIGHT = 1000;
+const SECTION_HEIGHT = 1100;
 
 const Hero = () => {
   const { scrollY } = useScroll();
 
-  const clip1 = useTransform(scrollY, [0, 200], [0, 0]);
-  const clip2 = useTransform(scrollY, [0, 200], [105, 100]);
+  const clip1 = useTransform(scrollY, [0, 500], [0, 0]);
+  const clip2 = useTransform(scrollY, [0, 500], [100, 100]);
 
   const clipPath = useMotionTemplate`polygon(${clip1}% ${clip1}%, ${clip2}% ${clip1}%, ${clip2}% ${clip2}%, ${clip1}% ${clip2}%)`;
 
   const backgroundSize = useTransform(
     scrollY,
     [0, SECTION_HEIGHT + 500],
-    ['155%', '250%']
+    ['140%', '250%']
   );
   const opacity = useTransform(
     scrollY,
@@ -67,11 +67,12 @@ const Hero = () => {
 
   return (
     <>
-    <div className='relative w-100'>
-        <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-black z-50 text-4xl font-bold mt-24 text-center">
-        Photos from the wilds to your wall
-      </h1>
-      </div>
+    <div className="w-screen ">
+  <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-zinc-300 z-50 text-2xl   font-bold text-center px-4   bg-black bg-opacity-50 p-4 rounded-lg shadow-lg  ">
+    Photos from the wilds to your wall
+  </h1>
+</div>
+
     
         
 
@@ -155,24 +156,7 @@ const ParallaxImg = ({ className, alt, src, start, end }) => {
 
 
 
-const ScheduleItem = ({ title, date, location }) => {
-  return (
-    <motion.div
-      initial={{ y: 48, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{ ease: 'easeInOut', duration: 0.75 }}
-      className="mb-9 flex items-center justify-between border-b border-zinc-800 px-3 pb-9"
-    >
-      <div>
-        <p className="mb-1.5 text-xl text-zinc-50">{title}</p>
-        <p className="text-sm uppercase text-zinc-500">{date}</p>
-      </div>
-      <div className="flex items-center gap-1.5 text-end text-sm uppercase text-zinc-500">
-        <p>{location}</p>
-        <FiMapPin />
-      </div>
-    </motion.div>
-  );
-};
+
+  
 
 export default SmoothScrollHero;
