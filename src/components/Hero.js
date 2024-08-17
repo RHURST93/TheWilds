@@ -1,24 +1,20 @@
-import React, { useEffect, useRef } from 'react';
-import Lenis from '@studio-freight/lenis';
+import React, { useEffect, useRef } from "react";
+import Lenis from "@studio-freight/lenis";
 import {
   motion,
   useMotionTemplate,
   useScroll,
   useTransform,
-} from 'framer-motion';
-import { SiSpacex } from 'react-icons/si';
-import { FiArrowRight, FiMapPin } from 'react-icons/fi';
-import cardinal from '../assets/cardinal.jpg';
-import hawk from '../assets/hawk.jpg';
-import herron from '../assets/herron.jpg';
-import paintedbunting from '../assets/paintedbunting.jpg';
-import scissortail from '../assets/scissortail.jpg';
+} from "framer-motion";
+import cardinal from "../assets/cardinal.jpg";
+import hawk from "../assets/hawk.jpg";
+import herron from "../assets/herron.jpg";
+import paintedbunting from "../assets/paintedbunting.jpg";
+import scissortail from "../assets/scissortail.jpg";
 const SmoothScrollHero = () => {
   useEffect(() => {
-    // Using `new` keyword to instantiate Lenis
     const lenis = new Lenis({
       lerp: 0.05,
-      // other options if needed
     });
 
     function raf(time) {
@@ -34,15 +30,12 @@ const SmoothScrollHero = () => {
   }, []);
 
   return (
-    <div className= "bg-lime-950">
-        
+    <div className="bg-lime-950 md:-mt-10 lg:-mt-0 ">
       <Hero />
       <ParallaxImages />
     </div>
   );
 };
-
-
 
 const SECTION_HEIGHT = 1100;
 
@@ -57,7 +50,7 @@ const Hero = () => {
   const backgroundSize = useTransform(
     scrollY,
     [0, SECTION_HEIGHT + 500],
-    ['140%', '250%']
+    ["140%", "250%"]
   );
   const opacity = useTransform(
     scrollY,
@@ -67,32 +60,23 @@ const Hero = () => {
 
   return (
     <>
-    <div className="w-screen ">
-  <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-zinc-300 z-50 text-2xl   font-bold text-center px-4   bg-black bg-opacity-50 p-4 rounded-lg shadow-lg  ">
-    Photos from the wilds to your wall
-  </h1>
-</div>
+      <div className="w-screen">
+        <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-zinc-300 z-50 text-2xl   font-bold text-center px-4   bg-black bg-opacity-50 p-4 rounded-lg shadow-lg  ">
+          Photos from the wilds to your wall
+        </h1>
+      </div>
 
-    
-        
-
-    
-    
-    <motion.div
-      className="sticky top-0 h-screen  w-screen "
-      style={{
-        clipPath,
-        backgroundSize,
-        opacity,
-        backgroundImage:
-          `url(${paintedbunting})`,
-        backgroundPosition: 'right',
-        backgroundRepeat: 'no-repeat',
-      }}
-      
-      
-    />
-    
+      <motion.div
+        className="sticky top-0 h-screen  w-screen "
+        style={{
+          clipPath,
+          backgroundSize,
+          opacity,
+          backgroundImage: `url(${paintedbunting})`,
+          backgroundPosition: "right",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
     </>
   );
 };
@@ -153,10 +137,5 @@ const ParallaxImg = ({ className, alt, src, start, end }) => {
     />
   );
 };
-
-
-
-
-  
 
 export default SmoothScrollHero;
