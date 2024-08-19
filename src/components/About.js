@@ -2,18 +2,10 @@ import React from "react";
 import lummi from "../assets/lummi.jpg";
 
 const About = () => {
-  
-
   return (
     <div className="bg-zinc-950 p-6 relative">
       <div className="relative bg-zinc-950 border-4 border-lime-950">
-        
-          
-        
-          <h1 className="text-white text-center text-3xl m-4">
-            About
-          </h1>
-        
+        <h1 className="text-white text-center text-3xl m-4">About</h1>
       </div>
 
       <div className="pt-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
