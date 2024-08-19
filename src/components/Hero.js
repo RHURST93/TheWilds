@@ -37,7 +37,7 @@ const SmoothScrollHero = () => {
   );
 };
 
-const SECTION_HEIGHT = 1100;
+const SECTION_HEIGHT = 1200;
 
 const Hero = () => {
   const { scrollY } = useScroll();
@@ -94,15 +94,15 @@ const ParallaxImages = () => {
       <ParallaxImg
         src={scissortail}
         alt="An example of a space launch"
-        start={500}
+        start={200}
         end={-750}
         className="mx-auto w-2/3"
       />
       <ParallaxImg
         src={cardinal}
         alt="Orbiting satellite"
-        start={-200}
-        end={10}
+        start={-300}
+        end={200}
         className="ml-auto w-1/3"
       />
       <ParallaxImg
