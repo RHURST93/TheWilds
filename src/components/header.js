@@ -5,7 +5,7 @@ import toggler from "../assets/toggler.png";
 const Header = () => {
   return (
     <div>
-      <div className="navbar bg-lime-950">
+      <div className="navbar bg-lime-950 relative z-50">
         <div className="navbar-start">
           <div className="dropdown">
             <div

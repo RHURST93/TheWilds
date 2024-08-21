@@ -67,7 +67,7 @@ const Hero = () => {
       </div>
 
       <motion.div
-        className="sticky top-0 h-screen  w-screen "
+        className="sticky top-0 h-screen   w-screen  "
         style={{
           clipPath,
           backgroundSize,

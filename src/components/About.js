@@ -11,7 +11,7 @@ const About = () => {
       <div className="pt-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div className="flex justify-center">
           <img
-            className="rounded-full"
+            className="rounded-full overflow-auto"
             src={lummi}
             alt="portfolio photo"
             style={{ width: 250 }}
