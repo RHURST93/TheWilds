@@ -1,20 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-import Header from './components/header';
-import Photo from './components/photo';
-import Hero from './components/Hero';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import PhotoGallery from './components/photo.js';
+import Canvas from './components/Canvas.js';
+import Calendars from './components/Calendars.js';
+import Prints from './components/Prints.js';
+import Header from './components/header.js';
+import SmoothScrollHero from './components/Hero.js';
 import About from './components/About';
-import PhotoGallery from './components/photo';
+import Main from './components/Main.js';
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <Header />
-      <Hero />
-      <About />
-      <PhotoGallery />
-    </div>
+    <Router>
+      
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/Canvas" element={<Canvas />} />
+        <Route path="/Calendars" element={<Calendars />} />
+        <Route path="/Prints" element={<Prints />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

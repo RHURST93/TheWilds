@@ -49,8 +49,8 @@ const Hero = () => {
 
   const backgroundSize = useTransform(
     scrollY,
-    [0, SECTION_HEIGHT + 500],
-    ["140%", "250%"]
+    [0, SECTION_HEIGHT + 400],
+    ["100%", "120%"]
   );
   const opacity = useTransform(
     scrollY,
@@ -67,7 +67,7 @@ const Hero = () => {
       </div>
 
       <motion.div
-        className="sticky top-0 h-screen   w-screen  "
+        className="sticky top-0 h-screen    w-screen  "
         style={{
           clipPath,
           backgroundSize,
@@ -75,6 +75,7 @@ const Hero = () => {
           backgroundImage: `url(${paintedbunting})`,
           backgroundPosition: "right",
           backgroundRepeat: "no-repeat",
+          marginTop: -100,
         }}
       />
     </>
