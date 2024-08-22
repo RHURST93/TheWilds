@@ -15,19 +15,20 @@ const Canvas = () => {
   return (
     <>
       <Header />
-      <div className="p-6 bg-zinc-950 grid grid-cols-4 sm:grid-cols-2  gap-6">
+      <div className="p-6 bg-zinc-950 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {photos.map((photo) => (
-          <div className="col-span-1  card bg-base-100  shadow-xl">
+          <div
+            key={photo.id}
+            className="card bg-base-100 shadow-xl flex flex-col"
+          >
             <figure>
-              <img src={photo.image} alt={photo.description} />
+              <img  src={photo.image} alt={photo.description} className="w-full h-auto object-cover" />
             </figure>
-            <div className="card-body">
+            <div className="card-body flex-grow">
               <h2 className="card-title">{photo.name}</h2>
               <p>{photo.description}</p>
-
-              <h4 className="bg-slate-200 -mb-3 p-2 rounded-lg">Size</h4>
-
-              <ul className="menu menu-horizontal bg-base-200 rounded-lg">
+              <h4 className="bg-slate-200 p-2 rounded-lg">Size</h4>
+              <ul className="menu menu-horizontal bg-base-200 rounded-lg flex justify-around">
                 {["12x14", "14x16", "18x20"].map((size) => (
                   <li key={size}>
                     <a
@@ -40,11 +41,10 @@ const Canvas = () => {
                     </a>
                   </li>
                 ))}
-                
               </ul>
             </div>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary mr-8 mb-5">Buy Now</button>
+            <div className="card-actions justify-end p-4">
+              <button className="btn btn-primary">Buy Now</button>
             </div>
           </div>
         ))}

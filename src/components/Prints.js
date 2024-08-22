@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import Header from "../components/header.js";
 import { photos } from "../components/photo.js";
 
@@ -16,24 +15,29 @@ const Prints = () => {
   return (
     <>
       <Header />
-      <div className="p-6 bg-zinc-950 grid grid-cols-4 sm:grid-cols-2  gap-6">
+      <div className="p-6 bg-zinc-950 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {photos.map((photo) => (
-          <div className="col-span-1  card bg-base-100  shadow-xl">
-            <figure>
-              <img src={photo.image} alt={photo.description} />
+          <div key={photo.id} className="card bg-base-100 shadow-xl flex flex-col">
+            <figure className="relative object-cover mb-8 overflow-hidden ">
+              <img
+                src={photo.image}
+                alt={photo.description}
+                className="w-full  h-50 object-cover object-center transition-transform duration-300 ease-in-out"
+                style={{ objectPosition: "center top" }} // Adjust image position
+              />
             </figure>
-            <div className="card-body">
-              <h2 className="card-title">{photo.name}</h2>
-              <p>{photo.description}</p>
+            <div className="card-body flex-grow p-4">
+              <h2 className="card-title text-lg font-semibold">{photo.name}</h2>
+              <p className="text-sm">{photo.description}</p>
 
-              <h4 className="bg-slate-200 -mb-3 p-2 rounded-lg">Size</h4>
+              <h4 className="bg-slate-200 p-2 rounded-lg mt-4">Size</h4>
 
-              <ul className="menu menu-horizontal bg-base-200 rounded-lg">
+              <ul className="menu menu-horizontal bg-base-200 rounded-lg flex flex-wrap mt-2">
                 {["4x6", "5x7", "8x10"].map((size) => (
-                  <li key={size}>
+                  <li key={size} className="mr-2 mb-2">
                     <a
                       className={
-                        selectedSize[photo.id] === size ? "active" : ""
+                        selectedSize[photo.id] === size ? "text-blue-500 font-bold" : "text-gray-700"
                       }
                       onClick={() => handleSizeClick(photo.id, size)}
                     >
@@ -43,12 +47,11 @@ const Prints = () => {
                 ))}
               </ul>
             </div>
-            <div className="card-actions justify-end">
-              <button className="btn btn-primary mr-8 mb-5">Buy Now</button>
+            <div className="card-actions justify-end p-4">
+              <button className="btn btn-primary">Buy Now</button>
             </div>
           </div>
         ))}
-        ;
       </div>
     </>
   );
