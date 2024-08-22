@@ -1,14 +1,13 @@
-import React from 'react'
-import Header from '../components/header.js';
+import React from "react";
+import Header from "../components/header.js";
 
 const Canvas = () => {
   return (
-    
     <div>
       <Header />
       <h1>Canvas</h1>
-      </div>
-  )
-}
+    </div>
+  );
+};
 
-export default Canvas
+export default Canvas;

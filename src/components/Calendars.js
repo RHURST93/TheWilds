@@ -1,13 +1,13 @@
-import React from 'react'
-import Header from '../components/header.js';
+import React from "react";
+import Header from "../components/header.js";
 
 const Calendars = () => {
   return (
     <div>
       <Header />
-        <h1 className='text-center'>Calendars</h1>
-        </div>
-  )
-}
+      <h1 className="text-center">Calendars</h1>
+    </div>
+  );
+};
 
-export default Calendars
+export default Calendars;
