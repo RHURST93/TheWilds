@@ -1,8 +1,13 @@
 import React from 'react'
+import Header from '../components/header.js';
 
 const Canvas = () => {
   return (
-    <div>Canvas</div>
+    
+    <div>
+      <Header />
+      <h1>Canvas</h1>
+      </div>
   )
 }
 
