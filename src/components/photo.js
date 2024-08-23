@@ -17,7 +17,7 @@ export const photos = [
   {
     id: 2,
     title: "Calendars",
-    Name: "Great Blue Herron",
+    name: "Great Blue Herron",
     image: herron,
     description: "Herron skimming over sunset waters.",
     link: "/calendars", // Internal link
