@@ -5,7 +5,7 @@ import paintedbunting from "../assets/paintedbunting.jpg";
 import scissortail from "../assets/scissortail.jpg";
 import herron from "../assets/herron.jpg";
 
-const Animalphotos = [
+const landscapephotos = [
   {
     id: 1,
     title: "Canvas",
@@ -35,16 +35,16 @@ const Animalphotos = [
   },
 ];
 
-const CalendarAnimals = () => {
+const CalendarLandscapes = () => {
   return (
     <>
       <Header />
 
       <h1 className="text-center text-3xl text-white bg-zinc-950 p-6">
-        Land Animal Calendars
+        Landscape Calendars
       </h1>
       <div className=" p-6 bg-zinc-950 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {Animalphotos.map((photo) => (
+        {landscapephotos.map((photo) => (
           <div
             key={photo.id}
             className="card bg-base-100 shadow-xl flex flex-col"
@@ -72,4 +72,4 @@ const CalendarAnimals = () => {
   );
 };
 
-export default CalendarAnimals;
+export default CalendarLandscapes;

@@ -17,13 +17,16 @@ const Prints = () => {
       <Header />
       <div className="p-6 bg-zinc-950 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {photos.map((photo) => (
-          <div key={photo.id} className="card bg-base-100 shadow-xl flex flex-col">
+          <div
+            key={photo.id}
+            className="card bg-base-100 shadow-xl flex flex-col"
+          >
             <figure className="relative object-cover mb-8 overflow-hidden ">
               <img
                 src={photo.image}
                 alt={photo.description}
                 className="w-full  h-50 object-cover object-center transition-transform duration-300 ease-in-out"
-                style={{ objectPosition: "center top" }} // Adjust image position
+                style={{ objectPosition: "center top" }}
               />
             </figure>
             <div className="card-body flex-grow p-4">
@@ -37,7 +40,9 @@ const Prints = () => {
                   <li key={size} className="mr-2 mb-2">
                     <a
                       className={
-                        selectedSize[photo.id] === size ? "text-blue-500 font-bold" : "text-gray-700"
+                        selectedSize[photo.id] === size
+                          ? "text-blue-500 font-bold"
+                          : "text-gray-700"
                       }
                       onClick={() => handleSizeClick(photo.id, size)}
                     >

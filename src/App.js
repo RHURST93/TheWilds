@@ -12,6 +12,7 @@ import PrintProduct from "./components/PrintProduct.js";
 import CalendarBirds from "./components/CalendarBirds.js";
 import CalendarFlowers from "./components/CalendarFlowers.js";
 import CalendarAnimals from "./components/CalendarAnimals.js";
+import CalendarLandscape from "./components/CalendarLandscape.js";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/CalBirds" element={<CalendarBirds />} />
         <Route path="/CalFlowers" element={<CalendarFlowers />} />
         <Route path="/CalAnimals" element={<CalendarAnimals />} />
+        <Route path="/CalLandscape" element={<CalendarLandscape />} />
       </Routes>
     </Router>
   );

@@ -22,7 +22,11 @@ const Canvas = () => {
             className="card bg-base-100 shadow-xl flex flex-col"
           >
             <figure>
-              <img  src={photo.image} alt={photo.description} className="w-full h-auto object-cover" />
+              <img
+                src={photo.image}
+                alt={photo.description}
+                className="w-full h-auto object-cover"
+              />
             </figure>
             <div className="card-body flex-grow">
               <h2 className="card-title">{photo.name}</h2>

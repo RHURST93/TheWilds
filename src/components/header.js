@@ -1,9 +1,8 @@
 import React from "react";
 import logo from "../assets/logo.png";
 import toggler from "../assets/toggler.png";
-import {faShoppingCart} from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Header = () => {
   return (
@@ -56,8 +55,7 @@ const Header = () => {
           </button>
           <button className="btn btn-ghost btn-circle text-white">
             <div className="indicator">
-              
-            <FontAwesomeIcon icon={faShoppingCart} />
+              <FontAwesomeIcon icon={faShoppingCart} />
 
               <span className="badge badge-xs badge-primary indicator-item"></span>
             </div>

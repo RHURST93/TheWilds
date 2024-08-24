@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom";
 import paintedbunting from "../assets/paintedbunting.jpg";
 import herron from "../assets/herron.jpg";
 import scissortail from "../assets/scissortail.jpg";
@@ -12,7 +12,7 @@ export const photos = [
     image: paintedbunting,
     name: "Painted Bunting",
     description: "Painted Bunting perched on a branch.",
-    link: "/Canvas", // Internal link
+    link: "/Canvas",
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ export const photos = [
     name: "Great Blue Herron",
     image: herron,
     description: "Herron skimming over sunset waters.",
-    link: "/calendars", // Internal link
+    link: "/calendars",
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ export const photos = [
     image: scissortail,
     name: "Scissortail Flycatcher",
     description: "Scissortail perched on a stem looking for food.",
-    link: "/prints", // Internal link
+    link: "/prints",
   },
 ];
 
