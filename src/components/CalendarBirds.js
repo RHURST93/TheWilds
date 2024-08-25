@@ -59,9 +59,9 @@ const CalendarBirds = () => {
             <div className="card-body flex-grow">
               <h2 className="card-title">{photo.name}</h2>
               <p>{photo.description}</p>
-              <div className="card-actions float-end">
+              <div className="card-actions flex-col items-center">
                 <h4 className="text-2xl mt-2 ">{photo.price}</h4>
-                <button className="ml-10  btn btn-primary">Buy Now</button>
+                <button className="  btn btn-primary">Buy Now</button>
               </div>
             </div>
           </div>

@@ -51,7 +51,7 @@ const Canvas = () => {
                 </ul>
               </div>
             </div>
-            <div className="card-actions justify-end p-4">
+            <div className="card-actions flex-col items-center p-4">
               <button className="btn btn-primary">Buy Now</button>
             </div>
           </div>
