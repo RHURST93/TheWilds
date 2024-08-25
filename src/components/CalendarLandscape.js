@@ -43,7 +43,7 @@ const CalendarLandscapes = () => {
       <h1 className="text-center text-3xl text-white bg-zinc-950 p-6">
         Landscape Calendars
       </h1>
-      <div className=" p-6 bg-zinc-950 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className=" p-6 bg-zinc-950 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6">
         {landscapephotos.map((photo) => (
           <div
             key={photo.id}
@@ -59,9 +59,9 @@ const CalendarLandscapes = () => {
             <div className="card-body flex-grow">
               <h2 className="card-title">{photo.name}</h2>
               <p>{photo.description}</p>
-              <div className="card-actions float-end">
+              <div className="card-actions flex-col items-center">
                 <h4 className="text-2xl mt-2 ">{photo.price}</h4>
-                <button className="ml-10  btn btn-primary">Buy Now</button>
+                <button className=" btn btn-primary">Buy Now</button>
               </div>
             </div>
           </div>

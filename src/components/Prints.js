@@ -33,9 +33,9 @@ const Prints = () => {
               <h2 className="card-title text-lg font-semibold">{photo.name}</h2>
               <p className="text-sm">{photo.description}</p>
 
-              <h4 className="bg-slate-200 p-2 rounded-lg mt-4">Size</h4>
+              <h4 className="bg-slate-200 p-2 rounded-t-lg mt-4 w-full">Size</h4>
 
-              <ul className="menu menu-horizontal bg-base-200 rounded-lg flex flex-wrap mt-2">
+              <ul className="menu menu-verticle bg-base-200 -mt-3 rounded-b-lg flex flex-wrap ">
                 {["4x6", "5x7", "8x10"].map((size) => (
                   <li key={size} className="mr-2 mb-2">
                     <a
@@ -52,7 +52,7 @@ const Prints = () => {
                 ))}
               </ul>
             </div>
-            <div className="card-actions justify-end p-4">
+            <div className="card-actions flex-col items-center p-4">
               <button className="btn btn-primary">Buy Now</button>
             </div>
           </div>

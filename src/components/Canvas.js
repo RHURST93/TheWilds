@@ -15,11 +15,11 @@ const Canvas = () => {
   return (
     <>
       <Header />
-      <div className="p-6 bg-zinc-950 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="p-6 bg-zinc-950 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6">
         {photos.map((photo) => (
           <div
             key={photo.id}
-            className="card bg-base-100 shadow-xl flex flex-col"
+            className="card bg-base-100 shadow-xl flex flex-col "
           >
             <figure>
               <img
@@ -31,21 +31,25 @@ const Canvas = () => {
             <div className="card-body flex-grow">
               <h2 className="card-title">{photo.name}</h2>
               <p>{photo.description}</p>
-              <h4 className="bg-slate-200 p-2 rounded-lg">Size</h4>
-              <ul className="menu menu-horizontal bg-base-200 rounded-lg flex justify-around">
-                {["12x14", "14x16", "18x20"].map((size) => (
-                  <li key={size}>
-                    <a
-                      className={
-                        selectedSize[photo.id] === size ? "active" : ""
-                      }
-                      onClick={() => handleSizeClick(photo.id, size)}
-                    >
-                      {size}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <div className="flex flex-col">
+                <h4 className="bg-slate-200 text-center text-xl p-2 z-20 rounded-t-lg w-full">
+                  Size
+                </h4>
+                <ul className="menu menu-vertical w-full bg-base-200 rounded-b-lg flex justify-around p-2">
+                  {["12x14", "14x16", "18x20"].map((size) => (
+                    <li key={size} className="w-full text-center">
+                      <a
+                        className={`block p-2 ${
+                          selectedSize[photo.id] === size ? "bg-primary text-white" : ""
+                        }`}
+                        onClick={() => handleSizeClick(photo.id, size)}
+                      >
+                        {size}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
             <div className="card-actions justify-end p-4">
               <button className="btn btn-primary">Buy Now</button>

@@ -31,6 +31,7 @@ const calendarPhotos = [
     id: 4,
     name: "Landscapes",
     image: scissortail,
+    description: 'Beautiful Landscape captures.',
     link: "/CalLandscape",
   },
 ];

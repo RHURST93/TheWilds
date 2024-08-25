@@ -43,7 +43,7 @@ const CalendarBirds = () => {
       <h1 className="text-center text-3xl text-white bg-zinc-950 p-6">
         Bird Calendars
       </h1>
-      <div className=" p-6 bg-zinc-950 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className=" p-6 bg-zinc-950 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6">
         {birdphotos.map((photo) => (
           <div
             key={photo.id}
