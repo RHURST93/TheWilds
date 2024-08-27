@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 
 const app = express();
+
 app.use(bodyParser.json());
 
 const mongoURI = "mongodb://localhost:27017/Animals";
@@ -31,8 +32,8 @@ const Photo = mongoose.model("Photo", PhotoSchema);
 
 app.get("/photos", async (req, res) => {
   try {
-    const Photo = await Photo.find();
-    res.json(Photo);
+    const photos = await Photo.find();
+    res.json(photos);
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
