@@ -3,6 +3,7 @@ import lummi from "../assets/lummi.jpg";
 
 const About = () => {
   return (
+    <section id="About">
     <div className="bg-zinc-950 p-6 relative">
       <div className="relative bg-zinc-950 border-4 border-lime-950">
         <h1 className="text-white text-center text-3xl m-4">About</h1>
@@ -32,6 +33,7 @@ const About = () => {
         </div>
       </div>
     </div>
+    </section>
   );
 };
 

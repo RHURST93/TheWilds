@@ -13,22 +13,28 @@ import CalendarBirds from "./components/CalendarBirds.js";
 import CalendarFlowers from "./components/CalendarFlowers.js";
 import CalendarAnimals from "./components/CalendarAnimals.js";
 import CalendarLandscape from "./components/CalendarLandscape.js";
+import Cart from "./pages/cart.js";
+import { CartProvider } from "./utils/cartContext.js";
+import ComingSoon from "./components/Calendars.js";
 
 const App = () => {
   return (
+    <CartProvider>
     <Router>
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/Canvas" element={<Canvas />} />
-        <Route path="/Calendars" element={<Calendars />} />
+        <Route path="/Calendars" element={<ComingSoon />} />
         <Route path="/Prints" element={<Prints />} />
         <Route path="/PrintProduct" element={<PrintProduct />} />
         <Route path="/CalBirds" element={<CalendarBirds />} />
         <Route path="/CalFlowers" element={<CalendarFlowers />} />
         <Route path="/CalAnimals" element={<CalendarAnimals />} />
         <Route path="/CalLandscape" element={<CalendarLandscape />} />
+        <Route path="/Cart" element={<Cart/>} />
       </Routes>
     </Router>
+    </CartProvider>
   );
 };
 
