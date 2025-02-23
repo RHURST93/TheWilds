@@ -2,14 +2,17 @@ import React, { useContext } from "react";
 import Header from "../components/header.js";
 import { CartContext } from "../utils/cartContext.js";
 import { formatPrice } from "../utils/utils.js";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
+  const navigate = useNavigate();
+
   const { 
     cartItems = [], 
     cartTotal = 0, 
     removeFromCart, 
     updateQuantity, 
-    processCheckout,
+    processCheckout, 
     isCheckoutComplete
   } = useContext(CartContext) || {};
 
@@ -17,10 +20,8 @@ const Cart = () => {
 
   const handleQuantityChange = (productId, size, change) => {
     if (!updateQuantity) return;
-    
     const item = cartItems.find(item => item.id === productId && item.size === size);
     if (!item) return;
-    
     const newQuantity = Math.max(1, item.quantity + change);
     updateQuantity(productId, size, newQuantity);
   };
@@ -30,13 +31,17 @@ const Cart = () => {
       console.error("Invalid item data:", item);
       return 0;
     }
-    
     if (typeof item.prices[item.size] !== 'number') {
       console.error(`Price not found for size ${item.size}`, item);
       return 0;
     }
-    
     return item.prices[item.size];
+  };
+
+  const handleCheckout = () => {
+    if (!isCheckoutComplete) {
+      navigate('/Checkout');
+    }
   };
 
   return (
@@ -68,12 +73,11 @@ const Cart = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {cartItems.map((item, index) => {
+                    {cartItems.map((item) => {
                       const itemPrice = getItemPrice(item);
                       const itemTotal = itemPrice * item.quantity;
-                      
                       return (
-                        <tr key={`${item.id}-${item.size}-${index}`} className="border-b">
+                        <tr key={`${item.id}-${item.size}`} className="border-b">
                           <td className="py-4">
                             <div className="flex items-center space-x-3">
                               <div className="avatar">
@@ -111,6 +115,7 @@ const Cart = () => {
                                 className="btn btn-xs btn-circle bg-gray-200"
                                 onClick={() => handleQuantityChange(item.id, item.size, -1)}
                                 disabled={item.quantity <= 1}
+                                aria-label={`Decrease quantity of ${item.name}`}
                               >
                                 -
                               </button>
@@ -118,6 +123,7 @@ const Cart = () => {
                               <button
                                 className="btn btn-xs btn-circle bg-gray-200"
                                 onClick={() => handleQuantityChange(item.id, item.size, 1)}
+                                aria-label={`Increase quantity of ${item.name}`}
                               >
                                 +
                               </button>
@@ -130,6 +136,7 @@ const Cart = () => {
                             <button
                               className="btn btn-sm btn-circle btn-ghost"
                               onClick={() => removeFromCart(item.id, item.size)}
+                              aria-label={`Remove ${item.name} from cart`}
                             >
                               ✕
                             </button>
@@ -156,7 +163,7 @@ const Cart = () => {
                   </a>
                   <button 
                     className={`btn ${isCheckoutComplete ? 'btn-success' : 'btn-primary'}`}
-                    onClick={processCheckout}
+                    onClick={handleCheckout} // Fixed: Pass function reference
                     disabled={isCheckoutComplete}
                   >
                     {isCheckoutComplete ? '✓ Order Placed!' : 'Checkout'}

@@ -16,6 +16,7 @@ import CalendarLandscape from "./components/CalendarLandscape.js";
 import Cart from "./pages/cart.js";
 import { CartProvider } from "./utils/cartContext.js";
 import ComingSoon from "./components/Calendars.js";
+import Checkout from "./pages/Checkout.js";
 
 const App = () => {
   return (
@@ -32,6 +33,8 @@ const App = () => {
         <Route path="/CalAnimals" element={<CalendarAnimals />} />
         <Route path="/CalLandscape" element={<CalendarLandscape />} />
         <Route path="/Cart" element={<Cart/>} />
+        <Route path="/Checkout" element={<Checkout/>} />
+
       </Routes>
     </Router>
     </CartProvider>
